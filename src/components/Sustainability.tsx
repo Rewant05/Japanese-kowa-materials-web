@@ -5,10 +5,10 @@ import { motion, useInView } from "framer-motion";
 import { Leaf } from "lucide-react";
 
 const stats = [
-  { value: 78, label: "Recycled material usage", suffix: "%" },
-  { value: 32, label: "Energy reduction", suffix: "%" },
-  { value: 41, label: "Waste reduction", suffix: "%" },
-  { value: 100, label: "Material traceability", suffix: "%" }
+  { value: 78, label: "リサイクル素材使用率", suffix: "%" },
+  { value: 32, label: "エネルギー削減", suffix: "%" },
+  { value: 41, label: "廃棄物削減", suffix: "%" },
+  { value: 100, label: "素材のトレーサビリティ", suffix: "%" }
 ];
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
@@ -59,7 +59,7 @@ export default function Sustainability() {
             <span className="text-[var(--color-ivory)]/70">未来にならない。</span>
           </h2>
           <p className="text-lg text-[var(--color-ivory)]/70 leading-relaxed font-light">
-            True strength lies in harmony with our environment. Kōwa Materials is pioneering a closed-loop metallurgical ecosystem, drastically reducing carbon emissions and ensuring that every ounce of steel can be traced back to its origin.
+            真の強さは環境との調和にあります。鋼和素材は、炭素排出量を大幅に削減し、すべての鉄鋼がその起源まで追跡可能であることを保証する、クローズドループの冶金エコシステムを開拓しています。
           </p>
         </div>
 

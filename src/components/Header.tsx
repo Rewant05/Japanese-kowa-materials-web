@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/materials", label: "Materials" },
-  { href: "/technology", label: "Technology" },
-  { href: "/applications", label: "Applications" },
-  { href: "/research", label: "Research" },
-  { href: "/sustainability", label: "Sustainability" },
-  { href: "/company", label: "Company" },
+  { href: "/materials", label: "製品情報" },
+  { href: "/technology", label: "技術" },
+  { href: "/applications", label: "応用" },
+  { href: "/research", label: "研究開発" },
+  { href: "/sustainability", label: "サステナビリティ" },
+  { href: "/company", label: "企業情報" },
 ];
 
 export default function Header() {
@@ -36,7 +36,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 z-50">
             <span className="text-xl font-bold tracking-widest text-[var(--color-ivory)]">鋼和</span>
-            <span className="text-sm tracking-[0.2em] text-[var(--color-ivory)]/70 mt-1 hidden sm:block">KŌWA</span>
+            <span className="text-sm tracking-[0.2em] text-[var(--color-ivory)]/70 mt-1 hidden sm:block">素材</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -62,7 +62,7 @@ export default function Header() {
           <button
             className="lg:hidden text-[var(--color-ivory)] z-50"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+            aria-label="メニュー切り替え"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

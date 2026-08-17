@@ -1,126 +1,70 @@
 import fs from 'fs';
 import path from 'path';
 
+// Define all subpages with their content in Japanese
 const pages = [
-  {
-    name: 'about',
-    title: 'About Us | 企業情報',
-    content: 'Kōwa Materials was founded in 1958 with a singular vision: to push the boundaries of metallurgical science. Rooted in traditional Japanese craftsmanship, we have evolved into a global leader in advanced materials and industrial chemicals.'
-  },
-  {
-    name: 'materials',
-    title: 'Materials Catalog | 製品情報',
-    content: 'Explore our comprehensive catalog of advanced materials, from structural steel and specialty alloys to surface treatments and advanced composites. Each material is engineered for specific performance parameters.',
-    catalog: true
-  },
-  {
-    name: 'technology',
-    title: 'Technology | 技術',
-    content: 'Our proprietary manufacturing processes combine extreme precision with algorithmic material discovery. We utilize AI-driven modeling to predict atomic structures before they are forged.'
-  },
-  {
-    name: 'applications',
-    title: 'Applications | 応用',
-    content: 'From aerospace components withstanding extreme thermal stress to automotive structural steel offering unprecedented strength-to-weight ratios, Kōwa Materials are the foundation of modern engineering.'
-  },
-  {
-    name: 'research',
-    title: 'Research & Development | 研究開発',
-    content: 'The KŌWA LAB is where tomorrow\'s materials are born. Our 500,000 sq ft R&D facility houses the world\'s most advanced electron microscopes and chemical synthesis laboratories.'
-  },
-  {
-    name: 'sustainability',
-    title: 'Sustainability | サステナビリティ',
-    content: 'True strength lies in harmony with our environment. We are pioneering a closed-loop metallurgical ecosystem, aiming for 100% material traceability and drastically reducing carbon emissions.'
-  },
-  {
-    name: 'company',
-    title: 'Company Profile | 会社概要',
-    content: 'Headquartered in Tokyo, Japan, Kōwa Materials operates globally with manufacturing and R&D facilities across Asia, Europe, and North America.'
-  },
-  {
-    name: 'careers',
-    title: 'Careers | 採用情報',
-    content: 'Join a team of material scientists, chemical engineers, and master craftsmen dedicated to forging the future. We are always looking for innovators who respect tradition while pushing boundaries.'
-  },
-  {
-    name: 'news',
-    title: 'News & Updates | ニュース',
-    content: 'Stay updated with the latest breakthroughs, corporate announcements, and industry insights from Kōwa Materials.'
-  },
-  {
-    name: 'contact',
-    title: 'Contact Us | お問い合わせ',
-    content: 'Partner with our engineers to develop custom material solutions for your next project. Reach out to our global offices for technical support and sales inquiries.'
-  },
-  {
-    name: 'faq',
-    title: 'FAQ | よくあるご質問',
-    content: 'Find answers to common questions regarding our material specifications, supply chain processes, and technical capabilities.'
-  },
-  {
-    name: 'privacy-policy',
-    title: 'Privacy Policy | プライバシーポリシー',
-    content: 'We are committed to protecting your privacy and ensuring the security of your data. Read our policy to understand how we handle information.'
-  },
-  {
-    name: 'terms-and-conditions',
-    title: 'Terms & Conditions | 利用規約',
-    content: 'These terms outline the rules and regulations for the use of Kōwa Materials\' website and services.'
-  }
+  { slug: "materials", title: "製品情報", desc: "鋼和の包括的な製品情報" },
+  { slug: "technology", title: "技術", desc: "当社のプロセスを牽引する高度なエンジニアリングと技術" },
+  { slug: "applications", title: "応用分野", desc: "鋼和素材が限界を再定義する産業分野" },
+  { slug: "research", title: "研究開発", desc: "当社の最先端ラボでのイノベーションと探求" },
+  { slug: "sustainability", title: "サステナビリティ", desc: "低炭素で持続可能な製造に対する当社の取り組み" },
+  { slug: "company", title: "企業情報", desc: "私たちの遺産、ミッション、そしてチーム" },
+  { slug: "about", title: "会社概要", desc: "1958年からの私たちの歩み" },
+  { slug: "careers", title: "採用情報", desc: "鋼和と共に明日の素材を創る" },
+  { slug: "faq", title: "よくある質問", desc: "お客様からのよくある質問への回答" },
+  { slug: "privacy-policy", title: "プライバシーポリシー", desc: "お客様のデータをどのように保護しているか" },
+  { slug: "terms-and-conditions", title: "利用規約", desc: "当社サービスの利用規約" },
+  { slug: "contact", title: "お問い合わせ", desc: "鋼和へのお問い合わせ" },
+  { slug: "news", title: "ニュース", desc: "鋼和からの最新情報とお知らせ" },
 ];
 
-const generatePage = (page) => {
-  const isCatalog = page.catalog;
+const basePath = process.cwd();
+
+pages.forEach(({ slug, title, desc }) => {
+  const dirPath = path.join(basePath, 'src', 'app', slug);
   
-  const catalogHTML = isCatalog ? `
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-        {[
-          { code: "KŌWA-STRUCT", desc: "Structural Steel", app: "Architecture" },
-          { code: "KŌWA-CERA", desc: "Specialty Alloys", app: "Aerospace" },
-          { code: "KŌWA-CHEM", desc: "Surface Treatments", app: "Industrial" },
-          { code: "KŌWA-NEX", desc: "Lightweight Alloys", app: "Automotive" },
-          { code: "KŌWA-ELEC", desc: "Advanced Composites", app: "Energy" }
-        ].map((item, idx) => (
-          <div key={idx} className="border border-white/10 p-6 bg-[var(--color-gunmetal)] hover:border-[var(--color-copper)] transition-colors group">
-            <p className="text-xs tracking-widest text-[var(--color-copper)] mb-2">MATERIAL CODE</p>
-            <h4 className="text-2xl font-bold mb-4">{item.code}</h4>
-            <p className="text-sm text-[var(--color-ivory)]/70 mb-4">{item.desc}</p>
-            <p className="text-sm font-mono mb-8">App: {item.app}</p>
-            <button className="text-sm tracking-widest border border-white/20 px-4 py-2 w-full group-hover:bg-[var(--color-copper)] group-hover:border-[var(--color-copper)] transition-colors">
-              DOWNLOAD DATASHEET
-            </button>
-          </div>
-        ))}
-      </div>
-  ` : '';
+  // Ensure directory exists
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
 
-  const componentName = page.name.replace(/-./g, x => x[1].toUpperCase()).replace(/^./, x => x.toUpperCase());
+  // Create page content
+  const content = `"use client";
 
-  return `export const metadata = {
-  title: "${page.title}",
-};
+import { motion } from "framer-motion";
 
-export default function ${componentName}Page() {
+export default function Page() {
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">${page.title}</h1>
-        <div className="w-16 h-1 bg-[var(--color-copper)] mb-12" />
-        <p className="text-xl text-[var(--color-ivory)]/70 max-w-3xl leading-relaxed">
-          ${page.content.replace(/"/g, '&quot;')}
-        </p>
-        ${catalogHTML}
+    <div className="min-h-screen pt-32 pb-24 bg-[var(--color-gunmetal)] text-[var(--color-ivory)]">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="border-b border-white/10 pb-12 mb-12"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            ${title}
+          </h1>
+          <p className="text-xl text-[var(--color-ivory)]/70 font-light max-w-2xl leading-relaxed">
+            ${desc}
+          </p>
+        </motion.div>
+        
+        <div className="prose prose-invert max-w-none">
+          <p className="text-lg leading-relaxed text-[var(--color-ivory)]/60">
+            このページは現在開発中であり、まもなく完全なコンテンツが更新される予定です。
+            ${title}に関連する当社の高度な能力の詳細については、後日またご確認ください。
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 `;
-};
 
-pages.forEach(page => {
-  const dirPath = path.join(process.cwd(), 'src', 'app', page.name);
-  fs.mkdirSync(dirPath, { recursive: true });
-  fs.writeFileSync(path.join(dirPath, 'page.tsx'), generatePage(page));
-  console.log('Generated ' + page.name);
+  fs.writeFileSync(path.join(dirPath, 'page.tsx'), content);
+  console.log(`Updated page: /${slug}`);
 });
+
+console.log("All Japanese pages generated successfully.");

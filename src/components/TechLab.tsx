@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Microscope } from "lucide-react";
 
 const researchAreas = [
-  "Advanced Alloys",
-  "Surface Chemistry",
-  "Thermal Engineering",
-  "Lightweight Materials",
-  "Sustainable Manufacturing"
+  "先端合金",
+  "表面化学",
+  "熱工学",
+  "軽量素材",
+  "持続可能な製造"
 ];
 
 export default function TechLab() {
@@ -21,11 +21,11 @@ export default function TechLab() {
           <div className="max-w-xl">
             <div className="flex items-center gap-3 mb-6">
               <Microscope size={24} className="text-[var(--color-copper)]" />
-              <h2 className="text-xl tracking-[0.2em] font-bold">KŌWA LAB</h2>
+              <h2 className="text-xl tracking-[0.2em] font-bold">鋼和ラボ</h2>
             </div>
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Where tomorrow's materials are born.</h3>
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">明日の素材が生まれる場所。</h3>
             <p className="text-[var(--color-graphite)]/70 text-lg leading-relaxed mb-8">
-              Our 500,000 sq ft R&D facility houses the world's most advanced electron microscopes, thermal simulators, and chemical synthesis labs. We don't just test materials; we invent them at the atomic level.
+              当社の50万平方フィートの研究開発施設には、世界最先端の電子顕微鏡、熱シミュレーター、および化学合成ラボが備わっています。私たちは単に材料をテストするだけでなく、原子レベルでそれらを発明します。
             </p>
             
             <div className="space-y-4 border-l-2 border-[var(--color-copper)] pl-6 py-2">
@@ -68,11 +68,11 @@ export default function TechLab() {
              
              {/* Overlay UI elements */}
              <div className="absolute top-4 left-4 text-[10px] font-mono font-bold text-[var(--color-graphite)]/50">
-               SCANNING: MICRO-STRUCTURE
+               スキャン中: 微細構造
              </div>
              <div className="absolute bottom-4 right-4 text-[10px] font-mono font-bold text-[var(--color-graphite)]/50 text-right">
-               MAGNIFICATION: 10,000x<br />
-               TEMP: 24.5°C
+               倍率: 10,000倍<br />
+               温度: 24.5°C
              </div>
           </div>
         </div>

@@ -11,8 +11,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "KŌWA MATERIALS | 鋼和",
-  description: "Engineering materials for a better future. Japanese advanced materials, specialty steel, and industrial chemicals.",
+  title: "鋼和 (Kōwa Materials) | より良い未来のための素材工学",
+  description: "鋼和は伝統的な日本の職人技と高度な産業化学を融合させ、特殊鋼、高性能合金、最先端の表面処理を生み出します。",
 };
 
 export default function RootLayout({

@@ -1,17 +1,31 @@
-export const metadata = {
-  title: "News & Updates | ニュース",
-};
+"use client";
 
-export default function NewsPage() {
+import { motion } from "framer-motion";
+
+export default function Page() {
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">News & Updates | ニュース</h1>
-        <div className="w-16 h-1 bg-[var(--color-copper)] mb-12" />
-        <p className="text-xl text-[var(--color-ivory)]/70 max-w-3xl leading-relaxed">
-          Stay updated with the latest breakthroughs, corporate announcements, and industry insights from Kōwa Materials.
-        </p>
+    <div className="min-h-screen pt-32 pb-24 bg-[var(--color-gunmetal)] text-[var(--color-ivory)]">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="border-b border-white/10 pb-12 mb-12"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            ニュース
+          </h1>
+          <p className="text-xl text-[var(--color-ivory)]/70 font-light max-w-2xl leading-relaxed">
+            鋼和からの最新情報とお知らせ
+          </p>
+        </motion.div>
         
+        <div className="prose prose-invert max-w-none">
+          <p className="text-lg leading-relaxed text-[var(--color-ivory)]/60">
+            このページは現在開発中であり、まもなく完全なコンテンツが更新される予定です。
+            ニュースに関連する当社の高度な能力の詳細については、後日またご確認ください。
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -5,60 +5,60 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, ChevronRight, Activity, Shield, Flame, Zap, Droplet, Move, Box } from "lucide-react";
 
 const applications = [
-  { id: "automotive", label: "自動車 / Automotive" },
-  { id: "architecture", label: "建築 / Architecture" },
-  { id: "energy", label: "エネルギー / Energy" },
-  { id: "robotics", label: "ロボティクス / Robotics" },
-  { id: "medical", label: "医療機器 / Medical Equipment" },
-  { id: "aerospace", label: "航空宇宙 / Aerospace" },
+  { id: "automotive", label: "自動車" },
+  { id: "architecture", label: "建築" },
+  { id: "energy", label: "エネルギー" },
+  { id: "robotics", label: "ロボティクス" },
+  { id: "medical", label: "医療機器" },
+  { id: "aerospace", label: "航空宇宙" },
 ];
 
 const properties = [
-  { id: "high-strength", label: "高強度 / High Strength", icon: <Shield size={16} /> },
-  { id: "lightweight", label: "軽量 / Lightweight", icon: <Move size={16} /> },
-  { id: "heat-resistant", label: "耐熱 / Heat Resistant", icon: <Flame size={16} /> },
-  { id: "corrosion", label: "耐腐食 / Corrosion Resistant", icon: <Droplet size={16} /> },
-  { id: "conductive", label: "導電性 / Conductive", icon: <Zap size={16} /> },
-  { id: "wear", label: "耐摩耗 / Wear Resistant", icon: <Activity size={16} /> },
+  { id: "high-strength", label: "高強度", icon: <Shield size={16} /> },
+  { id: "lightweight", label: "軽量", icon: <Move size={16} /> },
+  { id: "heat-resistant", label: "耐熱", icon: <Flame size={16} /> },
+  { id: "corrosion", label: "耐腐食", icon: <Droplet size={16} /> },
+  { id: "conductive", label: "導電性", icon: <Zap size={16} /> },
+  { id: "wear", label: "耐摩耗", icon: <Activity size={16} /> },
 ];
 
 // Fictional Materials DB
 const materialsDB: Record<string, any> = {
   "high-strength": {
-    name: "KŌWA-X90",
-    description: "Ultra-high-strength structural steel forged with advanced nanostructure engineering.",
-    category: "Structural Steel",
-    stats: { strength: "1800 MPa", density: "7.85 g/cm³", heatResist: "600°C", corrosionResist: "High" }
+    name: "鋼和-X90",
+    description: "高度なナノ構造エンジニアリングで鍛造された超高強度構造用鋼。",
+    category: "構造用鋼",
+    stats: { strength: "1800 MPa", density: "7.85 g/cm³", heatResist: "600°C", corrosionResist: "高" }
   },
   "lightweight": {
-    name: "KŌWA-NEX",
-    description: "Next-generation lightweight advanced alloy combining aluminum, titanium, and proprietary trace elements.",
-    category: "Advanced Alloy",
-    stats: { strength: "850 MPa", density: "3.20 g/cm³", heatResist: "450°C", corrosionResist: "Excellent" }
+    name: "鋼和-NEX",
+    description: "アルミニウム、チタン、および独自の微量元素を組み合わせた次世代軽量先端合金。",
+    category: "先端合金",
+    stats: { strength: "850 MPa", density: "3.20 g/cm³", heatResist: "450°C", corrosionResist: "優" }
   },
   "heat-resistant": {
-    name: "KŌWA-CERA",
-    description: "High-temperature resistant alloy with ceramic particulate reinforcement for extreme environments.",
-    category: "Specialty Alloy",
-    stats: { strength: "1100 MPa", density: "8.10 g/cm³", heatResist: "1400°C", corrosionResist: "Exceptional" }
+    name: "鋼和-CERA",
+    description: "過酷な環境向けのセラミック粒子強化型耐熱合金。",
+    category: "特殊合金",
+    stats: { strength: "1100 MPa", density: "8.10 g/cm³", heatResist: "1400°C", corrosionResist: "特優" }
   },
   "corrosion": {
-    name: "KŌWA-CHEM 21",
-    description: "Specialty chemical surface coating providing molecular-level defense against harsh corrosives.",
-    category: "Surface Treatment",
-    stats: { strength: "N/A", density: "1.05 g/cm³", heatResist: "350°C", corrosionResist: "Absolute" }
+    name: "鋼和-CHEM 21",
+    description: "過酷な腐食環境に対して分子レベルの防御を提供する特殊化学表面コーティング。",
+    category: "表面処理",
+    stats: { strength: "適用外", density: "1.05 g/cm³", heatResist: "350°C", corrosionResist: "絶対的" }
   },
   "conductive": {
-    name: "KŌWA-ELEC",
-    description: "Highly conductive copper-graphene hybrid matrix designed for next-gen energy grids and EV motors.",
-    category: "Advanced Composites",
-    stats: { strength: "450 MPa", density: "8.80 g/cm³", heatResist: "700°C", corrosionResist: "Medium" }
+    name: "鋼和-ELEC",
+    description: "次世代エネルギーグリッドとEVモーター向けに設計された高導電性銅・グラフェンハイブリッドマトリックス。",
+    category: "先端複合材料",
+    stats: { strength: "450 MPa", density: "8.80 g/cm³", heatResist: "700°C", corrosionResist: "中" }
   },
   "wear": {
-    name: "KŌWA-TUNGSTEN PLUS",
-    description: "Wear-resistant tool steel infused with tungsten carbides for unparalleled longevity in heavy friction.",
-    category: "Specialty Steel",
-    stats: { strength: "2100 MPa", density: "14.2 g/cm³", heatResist: "900°C", corrosionResist: "High" }
+    name: "鋼和-TUNGSTEN PLUS",
+    description: "激しい摩擦下で比類のない寿命を実現する、炭化タングステンを注入した耐摩耗工具鋼。",
+    category: "特殊鋼",
+    stats: { strength: "2100 MPa", density: "14.2 g/cm³", heatResist: "900°C", corrosionResist: "高" }
   },
 };
 
@@ -75,8 +75,8 @@ export default function MaterialExplorer() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-12">
-          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4">MATERIAL EXPLORER</h2>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight">素材を検索する</h3>
+          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4">素材検索</h2>
+          <h3 className="text-3xl md:text-5xl font-bold tracking-tight">用途から探す</h3>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -84,7 +84,7 @@ export default function MaterialExplorer() {
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* App Selection */}
             <div>
-              <h4 className="text-sm tracking-widest text-[var(--color-ivory)]/50 mb-4 border-b border-white/10 pb-2">1. APPLICATION</h4>
+              <h4 className="text-sm tracking-widest text-[var(--color-ivory)]/50 mb-4 border-b border-white/10 pb-2">1. 適用分野</h4>
               <div className="flex flex-wrap gap-2">
                 {applications.map((item) => (
                   <button
@@ -104,7 +104,7 @@ export default function MaterialExplorer() {
 
             {/* Property Selection */}
             <div>
-              <h4 className="text-sm tracking-widest text-[var(--color-ivory)]/50 mb-4 border-b border-white/10 pb-2">2. KEY PROPERTY</h4>
+              <h4 className="text-sm tracking-widest text-[var(--color-ivory)]/50 mb-4 border-b border-white/10 pb-2">2. 主要特性</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {properties.map((item) => (
                   <button
@@ -128,7 +128,7 @@ export default function MaterialExplorer() {
           <div className="lg:col-span-7">
             <div className="bg-[var(--color-graphite)] border border-white/10 p-6 sm:p-10 h-full flex flex-col">
               <h4 className="text-xs tracking-[0.2em] text-[var(--color-ivory)]/50 mb-6 flex items-center gap-2">
-                <Box size={14} /> RECOMMENDED SOLUTION
+                <Box size={14} /> 推奨ソリューション
               </h4>
 
               <AnimatePresence mode="wait">
@@ -154,29 +154,29 @@ export default function MaterialExplorer() {
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-auto">
                     <div className="border-t border-white/10 pt-3">
-                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">STRENGTH</p>
+                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">強度</p>
                       <p className="font-mono text-sm">{selectedMaterial.stats.strength}</p>
                     </div>
                     <div className="border-t border-white/10 pt-3">
-                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">DENSITY</p>
+                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">密度</p>
                       <p className="font-mono text-sm">{selectedMaterial.stats.density}</p>
                     </div>
                     <div className="border-t border-white/10 pt-3">
-                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">HEAT RESIST</p>
+                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">耐熱性</p>
                       <p className="font-mono text-sm">{selectedMaterial.stats.heatResist}</p>
                     </div>
                     <div className="border-t border-white/10 pt-3">
-                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">CORROSION</p>
+                      <p className="text-[10px] tracking-widest text-[var(--color-ivory)]/40 mb-1">耐腐食性</p>
                       <p className="font-mono text-sm">{selectedMaterial.stats.corrosionResist}</p>
                     </div>
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs tracking-wider text-[var(--color-copper)]">
-                      <Check size={14} /> Recommended for {applications.find(a => a.id === app)?.label.split(" / ")[1]}
+                      <Check size={14} /> {applications.find(a => a.id === app)?.label}向け推奨
                     </div>
                     <button className="text-sm font-bold tracking-widest flex items-center gap-1 hover:text-[var(--color-copper)] transition-colors">
-                      DATASHEET <ChevronRight size={16} />
+                      データシート <ChevronRight size={16} />
                     </button>
                   </div>
                 </motion.div>

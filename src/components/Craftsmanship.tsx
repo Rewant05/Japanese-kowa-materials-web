@@ -25,22 +25,22 @@ export default function Craftsmanship() {
           
           <div className="relative z-10">
             <h3 className="text-5xl md:text-7xl font-bold tracking-widest text-[var(--color-ivory)]/20 absolute -top-10 left-0 whitespace-nowrap opacity-50">
-              TRADITION
+              伝統
             </h3>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">匠の技</h2>
             <div className="w-12 h-1 bg-[var(--color-copper)] mb-8" />
             <ul className="space-y-4 text-lg text-[var(--color-ivory)]/70 font-light tracking-wide">
               <li className="flex items-center gap-4">
-                <span className="text-[var(--color-copper)] text-sm">01</span> Precision (精度)
+                <span className="text-[var(--color-copper)] text-sm">01</span> 精度 (Precision)
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-[var(--color-copper)] text-sm">02</span> Patience (忍耐)
+                <span className="text-[var(--color-copper)] text-sm">02</span> 忍耐 (Patience)
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-[var(--color-copper)] text-sm">03</span> Material Respect (素材への敬意)
+                <span className="text-[var(--color-copper)] text-sm">03</span> 素材への敬意 (Material Respect)
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-[var(--color-copper)] text-sm">04</span> Continuous Improvement (改善)
+                <span className="text-[var(--color-copper)] text-sm">04</span> 改善 (Continuous Improvement)
               </li>
             </ul>
           </div>
@@ -62,12 +62,12 @@ export default function Craftsmanship() {
           
           <div className="relative z-10 text-right">
             <h3 className="text-5xl md:text-7xl font-bold tracking-widest text-[var(--color-ivory)]/10 absolute -bottom-10 right-0 whitespace-nowrap opacity-50">
-              INNOVATION
+              革新
             </h3>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">先端技術</h2>
             <div className="w-12 h-1 bg-[var(--color-industrial-blue)] mb-8 ml-auto" />
             <p className="text-lg text-[var(--color-ivory)]/70 font-light tracking-wide leading-relaxed max-w-md ml-auto">
-              We translate centuries of Japanese manufacturing intuition into algorithmic precision. By coupling the human element of <em>Takumi</em> craftsmanship with quantum-level material modeling, we achieve what neither could do alone.
+              私たちは、何世紀にもわたる日本の製造業の直感を、アルゴリズムによる精度へと変換します。「匠」の職人技という人間的要素と、量子レベルの材料モデリングを組み合わせることで、どちらか一方では不可能なことを達成します。
             </p>
           </div>
         </div>

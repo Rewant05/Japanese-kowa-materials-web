@@ -4,13 +4,13 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const processSteps = [
-  { id: "01", title: "原料", subtitle: "Raw Materials", desc: "Selection of ultra-high purity iron ores and premium alloy additives." },
-  { id: "02", title: "溶解", subtitle: "Melting", desc: "Electric arc furnaces melting materials at precise temperatures." },
-  { id: "03", title: "精錬", subtitle: "Refining", desc: "Vacuum degassing and chemical adjustments to atomic perfection." },
-  { id: "04", title: "成形", subtitle: "Forming", desc: "Continuous casting into optimal geometries for further processing." },
-  { id: "05", title: "熱処理", subtitle: "Heat Treatment", desc: "Advanced quenching and tempering to lock in nanostructures." },
-  { id: "06", title: "精密加工", subtitle: "Precision Processing", desc: "Micro-level machining and specialized surface treatments." },
-  { id: "07", title: "品質保証", subtitle: "Quality Assurance", desc: "Ultrasonic, X-ray, and electron microscope verification." },
+  { id: "01", title: "原料", subtitle: "原料選定", desc: "超高純度の鉄鉱石と最高級の合金添加物の厳選。" },
+  { id: "02", title: "溶解", subtitle: "溶解工程", desc: "電気炉による正確な温度での原料の溶解。" },
+  { id: "03", title: "精錬", subtitle: "精錬工程", desc: "真空脱ガス処理と原子レベルでの化学組成調整。" },
+  { id: "04", title: "成形", subtitle: "成形工程", desc: "後工程に最適な形状への連続鋳造。" },
+  { id: "05", title: "熱処理", subtitle: "熱処理工程", desc: "ナノ構造を固定するための高度な焼入れと焼戻し。" },
+  { id: "06", title: "精密加工", subtitle: "精密加工", desc: "ミクロン単位の機械加工と特殊な表面処理。" },
+  { id: "07", title: "品質保証", subtitle: "品質保証", desc: "超音波、X線、および電子顕微鏡による徹底した検証。" },
 ];
 
 export default function ProcessTimeline() {
@@ -30,8 +30,8 @@ export default function ProcessTimeline() {
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-20">
         
         <div className="absolute top-32 left-6 md:left-12 z-20">
-          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-2">STEEL PROCESS</h2>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-ivory)]">製造工程</h3>
+          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-2">製造工程</h2>
+          <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-ivory)]">鋼和のプロセス</h3>
         </div>
 
         {/* Progress Line container */}

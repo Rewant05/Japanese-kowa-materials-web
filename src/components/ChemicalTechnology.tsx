@@ -7,37 +7,37 @@ import { Hexagon, Beaker, Shield, Factory } from "lucide-react";
 const molecules = [
   {
     id: "m1",
-    name: "Fluoropolymer Complex",
-    property: "Extreme chemical resistance and non-stick properties.",
-    application: "Chemical processing pipes, Medical equipment",
-    benefit: "Reduces maintenance downtime by 85%",
+    name: "フッ素樹脂複合体",
+    property: "極めて高い耐薬品性と非粘着性。",
+    application: "化学処理パイプ、医療機器",
+    benefit: "メンテナンスのダウンタイムを85％削減",
     icon: <Hexagon size={24} />,
     color: "var(--color-copper)"
   },
   {
     id: "m2",
-    name: "Nano-Silica Dispersion",
-    property: "Enhances surface hardness without compromising flexibility.",
-    application: "Automotive clear coats, Flexible electronics",
-    benefit: "Improves scratch resistance by 300%",
+    name: "ナノシリカ分散体",
+    property: "柔軟性を損なうことなく表面硬度を向上。",
+    application: "自動車用クリアコート、フレキシブル電子部品",
+    benefit: "耐擦傷性を300％向上",
     icon: <Beaker size={24} />,
     color: "var(--color-industrial-blue)"
   },
   {
     id: "m3",
-    name: "Anti-Corrosion Matrix",
-    property: "Self-healing microcapsules that repair micro-fractures.",
-    application: "Offshore wind turbines, Marine infrastructure",
-    benefit: "Extends component lifespan in saltwater by 15 years",
+    name: "防食マトリックス",
+    property: "微小な亀裂を修復する自己修復マイクロカプセル。",
+    application: "洋上風力発電、海洋インフラ",
+    benefit: "塩水環境下での部品寿命を15年延長",
     icon: <Shield size={24} />,
     color: "var(--color-deepred)"
   },
   {
     id: "m4",
-    name: "High-Temp Polyimide",
-    property: "Maintains structural integrity above 400°C.",
-    application: "Aerospace engine components, Semiconductor manufacturing",
-    benefit: "Enables 20% lighter high-temp assemblies",
+    name: "高温ポリイミド",
+    property: "400度以上でも構造の完全性を維持。",
+    application: "航空宇宙エンジン部品、半導体製造",
+    benefit: "高温アセンブリの20％軽量化を実現",
     icon: <Factory size={24} />,
     color: "#ff8a00"
   }
@@ -53,10 +53,10 @@ export default function ChemicalTechnology() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16 text-center max-w-3xl mx-auto">
-          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4 font-bold">INDUSTRIAL CHEMICALS</h2>
+          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4 font-bold">産業用化学</h2>
           <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">化学で、素材の可能性を広げる。</h3>
           <p className="text-[var(--color-graphite)]/70 text-lg leading-relaxed">
-            Beyond metals, Kōwa pioneers specialty industrial chemicals. Our surface treatments, protective coatings, and high-performance polymers redefine the physical limits of base materials.
+            金属を超えて、鋼和は特殊産業化学を開拓します。私たちの表面処理、保護コーティング、および高性能ポリマーは、ベース素材の物理的限界を再定義します。
           </p>
         </div>
 
@@ -132,15 +132,15 @@ export default function ChemicalTechnology() {
               
               <div className="space-y-6">
                 <div>
-                  <p className="text-xs tracking-widest text-[var(--color-copper)] font-bold mb-1 uppercase">Material Property</p>
+                  <p className="text-xs tracking-widest text-[var(--color-copper)] font-bold mb-1 uppercase">素材特性</p>
                   <p className="text-[var(--color-graphite)]/80 font-medium">{activeMol.property}</p>
                 </div>
                 <div>
-                  <p className="text-xs tracking-widest text-[var(--color-copper)] font-bold mb-1 uppercase">Industrial Application</p>
+                  <p className="text-xs tracking-widest text-[var(--color-copper)] font-bold mb-1 uppercase">産業応用</p>
                   <p className="text-[var(--color-graphite)]/80 font-medium">{activeMol.application}</p>
                 </div>
                 <div className="bg-[var(--color-ivory)] p-4 rounded-md border-l-4" style={{ borderColor: activeMol.color }}>
-                  <p className="text-xs tracking-widest text-black/50 font-bold mb-1 uppercase">Performance Benefit</p>
+                  <p className="text-xs tracking-widest text-black/50 font-bold mb-1 uppercase">性能上の利点</p>
                   <p className="text-black font-bold text-lg">{activeMol.benefit}</p>
                 </div>
               </div>

@@ -41,7 +41,7 @@ export default function HeroSection() {
         >
           <div className="flex items-center gap-4 mb-6">
             <span className="h-[1px] w-12 bg-[var(--color-copper)]" />
-            <span className="text-xs tracking-[0.3em] text-[var(--color-ivory)]/70 uppercase">Advanced Materials / Japan</span>
+            <span className="text-xs tracking-[0.3em] text-[var(--color-ivory)]/70 uppercase">先端素材 / 日本</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
@@ -50,7 +50,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--color-ivory)]/70 mb-12 max-w-2xl font-light leading-relaxed">
-            Engineering materials for a better future. Kōwa Materials pioneers the intersection of traditional Japanese craftsmanship and advanced industrial chemistry to forge specialty steel and high-performance alloys.
+            より良い未来のための素材工学。鋼和は伝統的な日本の職人技と高度な産業化学を融合させ、特殊鋼と高性能合金を生み出します。
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
@@ -78,7 +78,7 @@ export default function HeroSection() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs tracking-widest text-[var(--color-ivory)]/50 uppercase writing-vertical-rl">Scroll</span>
+        <span className="text-xs tracking-widest text-[var(--color-ivory)]/50 uppercase writing-vertical-rl">スクロール</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-[var(--color-ivory)]/50 to-transparent" />
       </motion.div>
     </section>

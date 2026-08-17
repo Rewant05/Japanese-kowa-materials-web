@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const timelineEvents = [
-  { year: "1958", title: "創業", desc: "Founded as a precision machining workshop in Osaka." },
-  { year: "1976", title: "Specialty Steel Division", desc: "Launched dedicated specialty steel division for the booming automotive sector." },
-  { year: "1994", title: "Advanced Chemical Lab", desc: "Opened the Advanced Chemical Materials Laboratory to pioneer surface treatments." },
-  { year: "2008", title: "Global Partnerships", desc: "Established engineering partnerships across Europe and North America." },
-  { year: "2021", title: "Low-Carbon Initiative", desc: "Transitioned 40% of production to renewable-powered electric arc furnaces." },
-  { year: "2026", title: "Next-Gen Platform", desc: "Introduced AI-driven material discovery and the closed-loop metallurgical ecosystem." }
+  { year: "1958", title: "創業", desc: "大阪で精密機械加工工場として設立。" },
+  { year: "1976", title: "特殊鋼部門設立", desc: "急速に成長する自動車産業向けに特殊鋼専門部門を立ち上げ。" },
+  { year: "1994", title: "先端化学研究所", desc: "表面処理を開拓するための先端化学材料研究所を開設。" },
+  { year: "2008", title: "グローバルパートナーシップ", desc: "ヨーロッパおよび北米全体に技術提携を確立。" },
+  { year: "2021", title: "低炭素イニシアチブ", desc: "生産の40％を再生可能エネルギー駆動の電気炉に移行。" },
+  { year: "2026", title: "次世代プラットフォーム", desc: "AI主導の材料探索とクローズドループ冶金エコシステムを導入。" }
 ];
 
 export default function HistoryTimeline() {
@@ -26,7 +26,7 @@ export default function HistoryTimeline() {
     <section ref={containerRef} className="py-32 bg-[var(--color-gunmetal)] text-[var(--color-ivory)]">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-24">
-          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4 font-bold">OUR HISTORY</h2>
+          <h2 className="text-sm tracking-[0.2em] text-[var(--color-copper)] mb-4 font-bold">私たちの歴史</h2>
           <h3 className="text-3xl md:text-5xl font-bold tracking-tight">進化の軌跡</h3>
         </div>
 
